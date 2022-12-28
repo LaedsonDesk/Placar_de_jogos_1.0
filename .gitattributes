@@ -1,2 +1,54 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+algoritmo "goleada"
+
+Var
+   time1, time2, venc, clas:caractere
+   placar1, placar2, ganha1 : inteiro
+Inicio
+   escreval("------------------")
+   escreval("  PLACAR DO JOGO  ")
+   escreval("------------------")
+   escreval(" ")
+   escreval("Qual o nome do time 1?")
+   leia (time1)
+   escreval ("X")
+   escreval("Qual o nome do time 2?")
+   leia (time2)
+   escreval("-------------------")
+   escreva (time1, " marcou:")
+   leia (placar1)
+   escreval ("X")
+   escreva (time2, " marcou:")
+   leia (placar2)
+   se placar1>placar2 entao
+      ganha1 <- placar1-placar2
+      venc <- time1
+   senao
+      se placar1<placar2 entao
+         ganha1 <- placar2-placar1
+         venc <- (time)
+      senao
+         se placar1=placar2 entao
+            venc <- ("empate")
+         fimse
+      fimse
+   fimse
+   Se ganha1<=1 entao
+      clas <- ("disputado")
+   senao
+      se ganha1<=2 entao
+         clas <- ("normal")
+      senao
+         se ganha1>=3 entao
+            clas <- ("goleada")
+         fimse
+      fimse
+   fimse
+   escreval("-------------------")
+   se ganha1=0 então
+      escreval ("O resultado do jogo foi",venc,)
+   senao
+      escreval ("O vencedor do jogo foi ",venc," com a diferença de ", ganha1," gols")
+      escreval ("Classificação do jogo: ",clas)
+      fimse
+
+Fimalgoritmo
